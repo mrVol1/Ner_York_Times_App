@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class NewsLocalDataSources {
   Future<List<NewsModel>> getLastNewsFromCash();
-  Future<void> newsToCash(List<NewsModel> news);
+  // Future<void> newsToCash(List<NewsModel> news);
 }
 
 const cacahedNewsList = 'CACHED_NEWS_LIST';
@@ -27,12 +27,12 @@ class NewsLocalSourcesImp implements NewsLocalDataSources {
     }
   }
 
-  @override
-  Future<void> newsToCash(List<NewsModel> news) {
-    final List<String> jsonNewsList =
-        news.map((e) => json.encode(e.toJson())) as List<String>;
+  // @override
+  // Future<void> newsToCash(List<NewsModel> news) {
+  //   final List<String> jsonNewsList =
+  //       news.map((e) => json.encode(e.toJson())).toList();
 
-    sharedPreferences.setStringList(cacahedNewsList, jsonNewsList);
-    return Future.value(jsonNewsList);
-  }
+  //   sharedPreferences.setStringList(cacahedNewsList, jsonNewsList);
+  //   return Future.value(jsonNewsList);
+  // }
 }

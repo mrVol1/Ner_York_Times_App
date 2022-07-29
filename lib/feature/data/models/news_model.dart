@@ -13,14 +13,14 @@ class NewsModel extends NewsEntity {
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(
-      status: json['status'] as String,
-      copyright: json['copyright'] as String,
-      section: json['section'] as String,
-      lastUpdated: json['lastUpdated'] as String,
-      numResult: json['numResult'] as String,
+      status: json['status'] as String?,
+      copyright: json['copyright'] as String?,
+      section: json['section'] as String?,
+      lastUpdated: json['lastUpdated'] as String?,
+      numResult: json['numResult'] as String?,
       results: json['results'] != null
           ? ArticleModel.fromJson(json['results'])
-          : null as ArticleEntity,
+          : null as ArticleEntity?,
     );
   }
 
