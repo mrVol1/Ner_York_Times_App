@@ -33,6 +33,7 @@ class NewsLocalSourcesImp implements NewsLocalDataSources {
         news.map((e) => json.encode(e.toJson())).toList();
 
     sharedPreferences.setStringList(cacahedNewsList, jsonNewsList);
+    print('News to write Cache: ${jsonNewsList.length}');
     return Future.value(jsonNewsList);
   }
 }

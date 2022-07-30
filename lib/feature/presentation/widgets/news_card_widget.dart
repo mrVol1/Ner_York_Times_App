@@ -24,7 +24,7 @@ class NewsCard extends StatelessWidget {
                   height: 12.0,
                 ),
                 Text(
-                  news.results.title,
+                  news.results!.title,
                   style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:new_york_times/core/error/exception.dart';
+import 'package:new_york_times/feature/data/models/article_model.dart';
 import 'package:new_york_times/feature/data/models/news_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,11 +19,12 @@ class NewsRemoteDataSourseImp implements NewRemoteDataSourse {
       'https://api.nytimes.com/svc/topstories/v2/home.json?&api-key=z5jeiAVE5HhRKGaoC8twMEvZFhw1YtXc');
 
   Future<List<NewsModel>> _getNewsFromUrl(String url) async {
+    print(url);
     final response = await client
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       final news = json.decode(response.body);
-      return (news['status'] as List)
+      return (news['results'] as List)
           .map(
             (e) => NewsModel.fromJson(e),
           )

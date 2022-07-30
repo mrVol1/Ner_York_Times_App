@@ -9,18 +9,18 @@ class ArticleEntity extends Equatable {
   final String url;
   final String uri;
   final String byline;
-  final String itemType;
-  final String updatedDate;
-  final String createdDate;
-  final String publishedDate;
-  final String materialTypeFacet;
-  final String kicker;
-  final List<dynamic> desFacet;
-  final List<dynamic> orgFacet;
-  final List<dynamic> perFacet;
-  final List<dynamic> geoFacet;
-  final MultimediaEntity multimedia;
-  final String shortUrl;
+  final String? itemType;
+  final String? updatedDate;
+  final String? createdDate;
+  final String? publishedDate;
+  final String? materialTypeFacet;
+  final String? kicker;
+  final List<dynamic>? desFacet;
+  final List<dynamic>? orgFacet;
+  final List<dynamic>? perFacet;
+  final List<dynamic>? geoFacet;
+  final MultimediaEntity? multimedia;
+  final String? shortUrl;
 
   const ArticleEntity(
       {required this.section,

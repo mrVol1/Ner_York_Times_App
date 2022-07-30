@@ -33,20 +33,20 @@ class ArticleModel extends ArticleEntity {
       url: json['url'] as String,
       uri: json['uri'] as String,
       byline: json['byline'] as String,
-      itemType: json['itemType'] as String,
-      updatedDate: json['updatedDate'] as String,
-      createdDate: json['createdDate'] as String,
-      publishedDate: json['publishedDate'] as String,
-      materialTypeFacet: json['materialTypeFacet'] as String,
-      kicker: json['kicker'] as String,
-      desFacet: json['desFacet'] as List,
-      orgFacet: json['orgFacet'] as List,
-      perFacet: json['perFacet'] as List,
-      geoFacet: json['geoFacet'] as List,
+      itemType: json['itemType'] as String?,
+      updatedDate: json['updatedDate'] as String?,
+      createdDate: json['createdDate'] as String?,
+      publishedDate: json['publishedDate'] as String?,
+      materialTypeFacet: json['materialTypeFacet'] as String?,
+      kicker: json['kicker'] as String?,
+      desFacet: json['desFacet'] as List?,
+      orgFacet: json['orgFacet'] as List?,
+      perFacet: json['perFacet'] as List?,
+      geoFacet: json['geoFacet'] as List?,
       multimedia: json['multimedia'] != null
           ? MultimediaModel.fromJson(json['multimedia'])
-          : null as MultimediaEntity,
-      shortUrl: json['shortUrl'] as String,
+          : null as MultimediaEntity?,
+      shortUrl: json['shortUrl'] as String?,
     );
   }
 
