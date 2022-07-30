@@ -10,7 +10,7 @@ abstract class NewRemoteDataSourse {
 }
 
 class NewsRemoteDataSourseImp implements NewRemoteDataSourse {
-  late final http.Client client;
+  final http.Client client;
 
   NewsRemoteDataSourseImp({required this.client});
   @override
@@ -22,7 +22,7 @@ class NewsRemoteDataSourseImp implements NewRemoteDataSourse {
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       final news = json.decode(response.body);
-      return (news['results'] as List)
+      return (news['status'] as List)
           .map(
             (e) => NewsModel.fromJson(e),
           )

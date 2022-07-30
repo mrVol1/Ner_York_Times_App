@@ -3,11 +3,11 @@ import 'package:new_york_times/feature/domain/entities/article_entity.dart';
 
 class NewsEntity extends Equatable {
   final String? status;
-  final String? copyright;
-  final String? section;
-  final String? lastUpdated;
-  final String? numResult;
-  final ArticleEntity? results;
+  final String copyright;
+  final String section;
+  final String lastUpdated;
+  final String numResult;
+  final ArticleEntity results;
 
   const NewsEntity({
     required this.status,

@@ -22,7 +22,7 @@ class NewsRepositoryImpl implements NewsRepository {
     if (await networkInfo.isConnected) {
       try {
         final remoteNews = await remoteDataSourse.getAllNews();
-        // localDataSources.newsToCash(remoteNews);
+        localDataSources.newsToCash(remoteNews);
         return Right(remoteNews);
       } on ServerException {
         return Left(ServerFailure());
