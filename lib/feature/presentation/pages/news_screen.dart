@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         title: const Text('News'),
         centerTitle: true,
       ),
-      body: NewsList(),
+      body: const NewsList(),
     );
   }
 }

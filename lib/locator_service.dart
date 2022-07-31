@@ -38,12 +38,12 @@ Future<void> init() async {
 
   serverLocator.registerLazySingleton<NewRemoteDataSourse>(
     () => NewsRemoteDataSourseImp(
-      client: http.Client(),
+      client: serverLocator(),
     ),
   );
 
   serverLocator.registerLazySingleton<NewsLocalDataSources>(
-    () => NewsLocalSourcesImp(
+    () => NewsLocalDataSourcesImp(
       sharedPreferences: serverLocator(),
     ),
   );

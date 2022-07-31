@@ -1,5 +1,4 @@
 import 'package:new_york_times/feature/data/models/article_model.dart';
-import 'package:new_york_times/feature/domain/entities/article_entity.dart';
 import 'package:new_york_times/feature/domain/entities/news_entity.dart';
 
 class NewsModel extends NewsEntity {
@@ -13,14 +12,14 @@ class NewsModel extends NewsEntity {
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(
-      status: json['status'] as String,
+      status: json['status'] as String?,
       copyright: json['copyright'] as String,
       section: json['section'] as String,
       lastUpdated: json['lastUpdated'] as String,
       numResult: json['numResult'] as String,
       results: json['results'] != null
           ? ArticleModel.fromJson(json['results'])
-          : null as ArticleEntity,
+          : null as ArticleModel,
     );
   }
 

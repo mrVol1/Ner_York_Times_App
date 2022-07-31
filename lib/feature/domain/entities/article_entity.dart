@@ -4,23 +4,23 @@ import 'package:new_york_times/feature/domain/entities/multimedia_entity.dart';
 class ArticleEntity extends Equatable {
   final String section;
   final String subsection;
-  final String title;
+  final String? title;
   final String abstract;
   final String url;
   final String uri;
   final String byline;
-  final String itemType;
-  final String updatedDate;
-  final String createdDate;
-  final String publishedDate;
-  final String materialTypeFacet;
-  final String kicker;
-  final List<dynamic> desFacet;
-  final List<dynamic> orgFacet;
-  final List<dynamic> perFacet;
-  final List<dynamic> geoFacet;
-  final MultimediaEntity multimedia;
-  final String shortUrl;
+  final String? itemType;
+  final String? updatedDate;
+  final String? createdDate;
+  final String? publishedDate;
+  final String? materialTypeFacet;
+  final String? kicker;
+  final List<dynamic>? desFacet;
+  final List<dynamic>? orgFacet;
+  final List<dynamic>? perFacet;
+  final List<dynamic>? geoFacet;
+  final MultimediaEntity? multimedia;
+  final String? shortUrl;
 
   const ArticleEntity(
       {required this.section,

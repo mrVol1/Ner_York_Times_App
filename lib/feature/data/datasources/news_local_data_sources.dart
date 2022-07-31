@@ -11,10 +11,10 @@ abstract class NewsLocalDataSources {
 
 const cacahedNewsList = 'CACHED_NEWS_LIST';
 
-class NewsLocalSourcesImp implements NewsLocalDataSources {
+class NewsLocalDataSourcesImp implements NewsLocalDataSources {
   late final SharedPreferences sharedPreferences;
 
-  NewsLocalSourcesImp({required this.sharedPreferences});
+  NewsLocalDataSourcesImp({required this.sharedPreferences});
 
   @override
   Future<List<NewsModel>> getLastNewsFromCash() {
@@ -30,9 +30,10 @@ class NewsLocalSourcesImp implements NewsLocalDataSources {
   @override
   Future<void> newsToCash(List<NewsModel> news) {
     final List<String> jsonNewsList =
-        news.map((e) => json.encode(e.toJson())) as List<String>;
+        news.map((e) => json.encode(e.toJson())).toList();
 
     sharedPreferences.setStringList(cacahedNewsList, jsonNewsList);
+    print('News to write Cache: ${jsonNewsList.length}');
     return Future.value(jsonNewsList);
   }
 }

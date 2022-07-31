@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:new_york_times/feature/data/models/news_model.dart';
 import 'package:new_york_times/feature/domain/entities/news_entity.dart';
 
 abstract class NewsState extends Equatable {
@@ -15,9 +16,8 @@ class NewsEmpty extends NewsState {
 
 class NewsLoading extends NewsState {
   final List<NewsEntity> oldNewsList;
-  final bool isFiresTetch; //Не уверен что нужна эта переменная
 
-  const NewsLoading(this.oldNewsList, {this.isFiresTetch = false});
+  const NewsLoading(this.oldNewsList);
   @override
   List<Object?> get props => [oldNewsList];
 }

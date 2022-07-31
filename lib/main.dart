@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_york_times/common/app_colors.dart';
 import 'package:new_york_times/feature/presentation/bloc/news_list_cubit/news_list_cubit.dart';
 import 'package:new_york_times/feature/presentation/pages/news_screen.dart';
+import 'package:new_york_times/locator_service.dart';
 import 'package:new_york_times/locator_service.dart' as di;
 
 void main() async {
@@ -17,9 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<NewsListCubit>(
-      create: (context) => di.serverLocator<NewsListCubit>()..loadNews(),
+      create: (context) => serverLocator<NewsListCubit>()..loadNews(),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           backgroundColor: AppColors.mainBackground,
           scaffoldBackgroundColor: AppColors.mainBackground,

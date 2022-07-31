@@ -10,7 +10,7 @@ abstract class NewRemoteDataSourse {
 }
 
 class NewsRemoteDataSourseImp implements NewRemoteDataSourse {
-  late final http.Client client;
+  final http.Client client;
 
   NewsRemoteDataSourseImp({required this.client});
   @override
@@ -18,6 +18,7 @@ class NewsRemoteDataSourseImp implements NewRemoteDataSourse {
       'https://api.nytimes.com/svc/topstories/v2/home.json?&api-key=z5jeiAVE5HhRKGaoC8twMEvZFhw1YtXc');
 
   Future<List<NewsModel>> _getNewsFromUrl(String url) async {
+    print(url);
     final response = await client
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {

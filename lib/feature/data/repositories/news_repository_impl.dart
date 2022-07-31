@@ -2,7 +2,7 @@ import 'package:new_york_times/core/error/exception.dart';
 import 'package:new_york_times/core/platform/network_info.dart';
 import 'package:new_york_times/feature/data/datasources/news_local_data_sources.dart';
 import 'package:new_york_times/feature/data/datasources/news_remote_data_sourse.dart';
-import 'package:new_york_times/feature/domain/entities/news_entity.dart';
+import 'package:new_york_times/feature/data/models/news_model.dart';
 import 'package:new_york_times/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:new_york_times/feature/domain/repositories/news_repository.dart';
@@ -18,7 +18,7 @@ class NewsRepositoryImpl implements NewsRepository {
     required this.localDataSources,
   });
   @override
-  Future<Either<Failure, List<NewsEntity>>> getAllNews(page) async {
+  Future<Either<Failure, List<NewsModel>>> getAllNews() async {
     if (await networkInfo.isConnected) {
       try {
         final remoteNews = await remoteDataSourse.getAllNews();

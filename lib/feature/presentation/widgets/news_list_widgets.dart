@@ -20,7 +20,7 @@ class NewsList extends StatelessWidget {
         }
         return ListView.separated(
             itemBuilder: (context, index) {
-              return NewsCard(news: news[index]);
+              return NewsCard(article: news[index]);
             },
             separatorBuilder: (context, index) {
               return Divider(
