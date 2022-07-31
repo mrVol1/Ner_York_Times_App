@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_york_times/core/error/failure.dart';
 import 'package:new_york_times/feature/data/models/news_model.dart';
+import 'package:new_york_times/feature/domain/entities/news_entity.dart';
 import 'package:new_york_times/feature/domain/usecases/get_all_news.dart';
 import 'package:new_york_times/feature/presentation/bloc/news_list_cubit/news_list_state.dart';
 import 'dart:core';
@@ -18,21 +19,20 @@ class NewsListCubit extends Cubit<NewsState> {
 
     final currentState = state;
 
-    var oldNews = <NewsModel>[];
+    var oldNews = <NewsEntity>[];
     if (currentState is NewsLoaded) {
       oldNews = currentState.newsList;
     }
 
     emit(NewsLoading(oldNews));
 
-    final failureOrNews = await getAllNews(
-      const PageNewsParams(page: 1),
-    );
+    final failureOrNews = await getAllNews();
 
-    failureOrNews.fold(
-        (error) => NewsError(message: _mapFailureToMessage(error)), (news) {
+    failureOrNews
+        .fold((error) => emit(NewsError(message: _mapFailureToMessage(error))),
+            (character) {
       final news = (state as NewsLoading).oldNewsList;
-      news.addAll(news);
+      news.addAll(character);
       emit(NewsLoaded(news));
     });
   }

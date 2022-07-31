@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:new_york_times/core/error/exception.dart';
-import 'package:new_york_times/feature/data/models/article_model.dart';
 import 'package:new_york_times/feature/data/models/news_model.dart';
 import 'package:http/http.dart' as http;
 

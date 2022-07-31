@@ -4,7 +4,7 @@ import 'package:new_york_times/feature/domain/entities/multimedia_entity.dart';
 class ArticleEntity extends Equatable {
   final String section;
   final String subsection;
-  final String title;
+  final String? title;
   final String abstract;
   final String url;
   final String uri;

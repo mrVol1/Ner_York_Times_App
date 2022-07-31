@@ -8,16 +8,7 @@ class GetAllNews {
   final NewsRepository newsRepository;
   GetAllNews(this.newsRepository);
 
-  Future<Either<Failure, List<NewsModel>>> call(PageNewsParams params) async {
-    return await newsRepository.getAllNews(params.page);
+  Future<Either<Failure, List<NewsModel>>> call() async {
+    return await newsRepository.getAllNews();
   }
-}
-
-class PageNewsParams extends Equatable {
-  final int page;
-
-  const PageNewsParams({required this.page});
-
-  @override
-  List<Object> get props => [page];
 }

@@ -11,10 +11,10 @@ abstract class NewsLocalDataSources {
 
 const cacahedNewsList = 'CACHED_NEWS_LIST';
 
-class NewsLocalSourcesImp implements NewsLocalDataSources {
+class NewsLocalDataSourcesImp implements NewsLocalDataSources {
   late final SharedPreferences sharedPreferences;
 
-  NewsLocalSourcesImp({required this.sharedPreferences});
+  NewsLocalDataSourcesImp({required this.sharedPreferences});
 
   @override
   Future<List<NewsModel>> getLastNewsFromCash() {

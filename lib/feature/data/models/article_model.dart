@@ -28,7 +28,7 @@ class ArticleModel extends ArticleEntity {
     return ArticleModel(
       section: json['section'] as String,
       subsection: json['subsection'] as String,
-      title: json['title'] as String,
+      title: json['title'] as String?,
       abstract: json['abstract'] as String,
       url: json['url'] as String,
       uri: json['uri'] as String,

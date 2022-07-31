@@ -3,9 +3,9 @@ import 'package:new_york_times/common/app_colors.dart';
 import 'package:new_york_times/feature/domain/entities/news_entity.dart';
 
 class NewsCard extends StatelessWidget {
-  final NewsEntity news;
+  final NewsEntity article;
 
-  const NewsCard({super.key, required this.news});
+  const NewsCard({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class NewsCard extends StatelessWidget {
                   height: 12.0,
                 ),
                 Text(
-                  news.results!.title,
+                  article.results.title as String,
                   style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,

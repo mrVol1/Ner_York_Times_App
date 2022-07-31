@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_york_times/feature/data/models/news_model.dart';
 import 'package:new_york_times/feature/domain/entities/news_entity.dart';
 import 'package:new_york_times/feature/presentation/bloc/news_list_cubit/news_list_cubit.dart';
 import 'package:new_york_times/feature/presentation/bloc/news_list_cubit/news_list_state.dart';
@@ -21,7 +20,7 @@ class NewsList extends StatelessWidget {
         }
         return ListView.separated(
             itemBuilder: (context, index) {
-              return NewsCard(news: news[index]);
+              return NewsCard(article: news[index]);
             },
             separatorBuilder: (context, index) {
               return Divider(

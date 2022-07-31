@@ -18,7 +18,7 @@ class NewsRepositoryImpl implements NewsRepository {
     required this.localDataSources,
   });
   @override
-  Future<Either<Failure, List<NewsModel>>> getAllNews(page) async {
+  Future<Either<Failure, List<NewsModel>>> getAllNews() async {
     if (await networkInfo.isConnected) {
       try {
         final remoteNews = await remoteDataSourse.getAllNews();
