@@ -1,6 +1,6 @@
 # new_york_times
 
-A new Flutter project.
+New York Times App, where may interested news in the world
 
 ## Getting Started
 
